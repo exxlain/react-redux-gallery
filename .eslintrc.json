@@ -1,0 +1,71 @@
+{
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaVersion": 2017,
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "sourceType": "module"
+  },
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "extends": "airbnb",
+  "rules": {
+    "camelcase": "warn",
+    "max-len": ["error", 120],
+    "no-param-reassign": "warn",
+    "indent": ["error", 2],
+    "import/prefer-default-export": "warn",
+    "no-use-before-define": ["error", { "functions": false, "variables": false }],
+    "brace-style": ["error", "1tbs"],
+    "react/jsx-indent": ["error", 2],
+    "react/jsx-filename-extension": "off",
+    "semi": [2, "never"],
+    "jsx-a11y/label-has-for": [ 2, {
+      "components": [ "Label" ],
+      "required": {
+        "every": [ "nesting", "id" ]
+      },
+      "allowChildren": true
+    }],
+    "no-underscore-dangle": ["error", { "allow": ["__REDUX_DEVTOOLS_EXTENSION__"] }],
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": [
+          ".storybook/**",
+          "**/stories/**",
+          "**/*.story.js",
+          "**/store/middleware/development.js",
+          "**/spec/setup/**"
+        ]
+      }
+    ],
+    "react/prefer-stateless-function": "off",
+    "react/forbid-prop-types": ["error", { "forbid": ["any", "array"] }]
+  },
+  "globals": {
+    "I18n": true,
+    "store": true,
+    "UnitChannel": true,
+    "Settings": true,
+    "Rails": true,
+    "location": true,
+    "cable": true,
+    "describe": true,
+    "it": true,
+    "expect": true,
+    "xit": true,
+    "fit": true,
+    "gon": true
+  },
+  "settings": {
+    "import/resolver": {
+      "webpack": {
+        "config": "config/webpack/development.js"
+      }
+    }
+  }
+}
